@@ -1,0 +1,11 @@
+[{
+"Role":"Technology Analyst - IVR Application Developer",
+"Duration" :"Jan 2017 - Till Date",
+"Description":"Added via json",
+"Responsibilities": ["Write UI Spec based on requirement Visio diagrams provided by client.",
+"Develop call flows using Camunda.",
+"Handle Conditions in call flows using Drools.",
+"Write back end code as per IPPlatform Framework rules.",
+"Use Postman to test the developed API for proper call flow and prompt verification.",
+"In parallel, Worked on a POC using draw.io tool to draw call flows. XML is fed to VTK and testcases are generated. This is fed to Cyara for automated IVR testing."]
+}]

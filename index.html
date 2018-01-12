@@ -1,0 +1,732 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Sofia's Portfolio</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./images/title icon.jpg" />
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="js/jquery.min.js"></script>
+        <!-- Custom Theme files -->
+        <link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+        <!-- Custom Theme files -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Sofia's Portfolio Resume" />
+        <!-- webfonts -->
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- webfonts -->
+        <!---- start-smoth-scrolling---->
+        <script type="text/javascript" src="js/move-top.js"></script>
+        <script type="text/javascript" src="js/easing.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){		
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){		
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                });
+            });
+        </script>
+        <!--
+<script>
+window.onscroll = function() {
+console.log("script detected");
+scrollFunction()
+};
+
+// Get the navbar
+var navbar = document.getElementById("sofia");
+console.log(navbar);
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function scrollFunction() {
+if (window.pageYOffset >= sticky) {
+navbar.classList.add("sticky")
+} else {
+navbar.classList.remove("sticky");
+}
+}
+
+</script>
+-->
+        <script type="text/javascript">
+            function myFunction(){
+                var url='https://github.com/sofiasamuels/ePortfolio/blob/master/Experience.json';
+                $.getJSON(url, function(json){
+                    for( var i=0; i<json.length;i++){
+                        var timeline=("$('.timeline')");
+                        console.log(timeline);
+                        $('.timeline').append('<li><div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div><div class="timeline-panel"> <div class="timeline-heading"><h4 class="timeline-title">'+json[i].Role+'</h4></div><div class="timeline-body">'+json[i].Description+'<button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button></div><div class="modal fade" id="2017" role="dialog"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">'+json[i].Role+'</h4></div> <div class="modal-body" style="text-align: justify;"><p>Responsibilities:</p><ul>'+ makeUL(json[i].Responsibilities)+'</ul></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button> </div></div></div> </div></div></li>');
+
+                    }
+                });
+            }
+            function makeUL(array) {
+                // Create the list element:
+                var list = document.createElement('ul');
+                for(var i = 0; i < array.length; i++) {
+                    // Create the list item:
+                    var item = document.createElement('li');
+                    // Set its contents:
+                    item.appendChild(document.createTextNode(array[i]));
+                    // Add it to the list:
+                    list.appendChild(item);
+                }
+                return list;
+            }
+
+        </script>
+        <!---- start-smoth-scrolling---->
+    </head>
+    <body>
+        <!-- container -->
+        <!-- header -->
+        <div id="home" class="header">
+            <div class="container">
+                <!-- top-hedader -->
+                <div class="top-header">
+                    <!-- /logo -->
+                    <!--top-nav---->
+                    <div id="sofia" class="banner-info" >
+                        <div class="top-nav" >
+                            <div class="navigation">
+                                <div class="col-md-12 header-right">
+                                    <h1 width:>Hi ! I am</h1>
+                                </div>
+
+                                <div class="logo">
+
+                                    <h1><a href="index.html"><span>S</span>OFIA</a></h1>
+                                </div>
+                                <div class="navigation-right">
+                                    <span class="menu"><img src="images/menu.png" alt=" " /></span>
+                                    <nav class="link-effect-3" id="link-effect-3">
+                                        <ul class="nav1 nav nav-wil">
+                                            <li class="active"><a data-hover="Home" href="index.html">Home</a></li>
+                                            <li><a class="scroll" data-hover="About" href="#about">About</a></li>
+                                            <li><a class="scroll" data-hover="Skills" href="#skills" >Skills</a></li>
+                                            <li><a class="scroll" data-hover="Experience" href="#work">Experience</a></li>
+                                            <li><a class="scroll" data-hover="Contact" href="#contact">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                    <!-- script-for-menu -->
+                                    <script>
+                                        $( "span.menu" ).click(function() {
+                                            $( "ul.nav1" ).slideToggle( 300, function() {
+                                                // Animation complete.
+                                            });
+                                        });
+                                    </script>
+                                    <!-- /script-for-menu -->
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <!-- /top-hedader -->
+                        </div>
+                    </div>
+                    <div class="banner-info">
+                        <div class="col-md-7 header-right">
+                            <h6>Full Stack Web Developer</h6>
+                            <ul class="address">
+
+                                <li>
+                                    <ul class="address-text">
+                                        <li><b>NAME</b></li>
+                                        <li>Sofia</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="address-text">
+                                        <li><b>D.O.B</b></li>
+                                        <li>13-05-1987</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="address-text">
+                                        <li><b>PHONE </b></li>
+                                        <li>+91 9790820609</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="address-text">
+                                        <li><b>ADDRESS </b></li>
+                                        <li>Chennai, TamilNadu, India</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="address-text">
+                                        <li><b>E-MAIL </b></li>
+                                        <li><a href="mailto:sofiasamuels@gmail.com"> sofiasamuels@gmail.com</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="address-text">
+                                        <li><b>WEBSITE </b></li>
+                                        <li><a href="http://w3layouts.com">www.sofiasamuels.github.io</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-5 header-left">
+                            <img src="images/img1.jpg" alt="">
+                        </div>
+                        <div class="clearfix"> </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- about -->
+        <div id="about" class="about">
+            <div class="col-md-12 about-left">
+                <div id="owl-demo1" class="owl-carousel owl-carousel2">
+                    <div class="item">
+                        <div class="about-left-grid">
+                            <h2>Hi! I'm <span>Sofia S</span></h2>
+                            <p>I am a creative Full Stack Web Developer! I can give perfect Web Solutions from FrontEnd till Database as per the application Requirements! </p>
+                            <ul>
+                                <li><a class="a-btn-a scroll" href="#work">My Work</a></li>
+                                <li><a class="a-btn-h scroll" href="#contact">Hire Me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="about-left-grid">
+                            <h2>Development Skills</h2>
+                            <p>Experienced Javascript developer with experience in Vue and Angular!</p>
+                            <ul>
+                                <li><a class="a-btn-a scroll" href="#work">My Work</a></li>
+                                <li><a class="a-btn-h scroll" href="#contact">Hire Me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="about-left-grid">
+                            <h2>Scripting Skills</h2>
+                            <p>Experienced Unix and Linux Shell scripting professional with excellent problem solving skills</p>
+                            <ul>
+                                <li><a class="a-btn-a scroll" href="#port">My Work</a></li>
+                                <li><a class="a-btn-h scroll" href="#contact">Hire Me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+            <link href="css/owl.carousel.css" rel="stylesheet">
+            <script src="js/owl.carousel.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $("#owl-demo1").owlCarousel({
+                        items : 1,
+                        lazyLoad : false,
+                        autoPlay : true,
+                        navigation : false,
+                        navigationText :  false,
+                        pagination : true,
+                    });
+                });
+            </script>
+            <!-- Feedback -->
+            <script>
+                $(document).ready(function() {
+                    $("#owl-demo3").owlCarousel({
+                        items : 1,
+                        lazyLoad : false,
+                        autoPlay : true,
+                        navigation : false,
+                        navigationText :  true,
+                        pagination :true,
+                    });
+                });
+            </script>
+        </div>
+        <!-- /about -->
+        <!-- services -->
+        <div id="skills" class="services">
+            <div class="container">
+                <div class="service-head one text-center ">
+                    <h4>WHAT I DO</h4>
+                    <h3>MY <span>SKILLS</span></h3>
+                    <span class="border two"></span>
+                </div>
+                <!-- services-grids -->
+                <div class="wthree_about_right_grids w3l-agile">
+                    <div class="col-md-6 wthree_about_right_grid">
+                        <div class="col-xs-4 wthree_about_right_grid_left">
+                            <div class="hvr-rectangle-in">
+                                <i class="devicon-angularjs-plain" style="position: relative;"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 wthree_about_right_grid_right">
+                            <h4>Angular</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #00a78e;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-6 wthree_about_right_grid">
+                        <div class="col-xs-4 wthree_about_right_grid_left">
+                            <div class="hvr-rectangle-in">
+                                <i class="devicon-vuejs-plain" style="position: relative;"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 wthree_about_right_grid_right">
+                            <h4>VueJS</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #00a78e;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-6 wthree_about_right_grid">
+                        <div class="col-xs-4 wthree_about_right_grid_left">
+                            <div class="hvr-rectangle-in">
+                                <i class="glyphicon glyphicon-leaf"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 wthree_about_right_grid_right">
+                            <h4>Mongo</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #00a78e;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-6 wthree_about_right_grid">
+                        <div class="col-xs-4 wthree_about_right_grid_left">
+                            <div class="hvr-rectangle-in">
+                                <i class="devicon-javascript-plain" style="position: relative;"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 wthree_about_right_grid_right">
+                            <h4>JavaScript</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #00a78e;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-6 wthree_about_right_grid">
+                        <div class="col-xs-4 wthree_about_right_grid_left">
+                            <div class="hvr-rectangle-in">
+                                <i class="devicon-nodejs-plain" style="position: relative;"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 wthree_about_right_grid_right">
+                            <h4>Node JS</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #00a78e;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-6 wthree_about_right_grid">
+                        <div class="col-xs-4 wthree_about_right_grid_left">
+                            <div class="hvr-rectangle-in">
+                                <i class="devicon-express-original" style="position: relative;"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 wthree_about_right_grid_right">
+                            <h4>Express JS</h4>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; background-color: #00a78e;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+
+                <!-- services-grids -->
+            </div>
+        </div>
+        <!-- services -->
+        <!--work-experience-->
+        <div id="work" class="work">
+            <div class="container">
+                <div class="service-head text-center">
+                    <h4>WHAT I DID</h4>
+                    <h3>MY <span>EXPERIENCE</span></h3>
+                    <span class="border one"></span>
+                </div>
+                <div class="time-main w3l-agile">
+                    <div class="col-md-6 year-info">
+                        <ul class="year">
+                            <li style="font-type: bold;">Jan 2017 – Till Date</li>
+                            <li>
+                                <div class="timeline-panel">
+                                    Technology Analyst - Web Developer
+                                </div>
+                            </li>
+                            <li>Aug 2016 – Dec 2016</li>
+                            <li >Technology Analyst IVR Application Developer</li>
+                            <li>Oct 2015 – Feb 2016</li>
+                            <li>Technology Analyst - Web Developer </li>
+                            <li>May 2014 - Sep 2015</li>
+                            <li >Senior Systems Engineer - Web Enhancement Engineer</li>
+                            <li>Jan 2011 - Apr 2014</li>
+                            <li>Systems Engineer</li>
+                            <li>Jun 2010 – Dec 2010</li>
+                            <li >Systems Engineer Trainee</li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div> 
+                    <ul class="col-md-6 timeline">
+                        <!--                        maestro-->
+                        <li>
+                            <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Technology Analyst - Web Developer</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <br>Client : AT&T
+                                    <br>Project : <a data-toggle="popover" title="CCT-IP-Maestro" data-content="Maestro is a tool to manage the operations configuration, monitor health and provide administration console for CCT IP Framework platform applications. Act as Production Support team's administration control for the entire CCT IP Platform application cloud. Manage cache data service to provide cache data to CCT IP Framework applications. Emergency messages activation/de-activation and many more data manipulation functionalities on IPPlatform Servers.">CCT-IP-Maestro</a>                                                              
+                                    <br>Technology & Environment : MEVN Stack, Windows.
+                                    <br>Domain: Contact Center<br>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button>
+                                </div>
+                                <div class="modal fade" id="2017" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Technology Analyst - Web Developer</h4>
+                                            </div>
+                                            <div class="modal-body" style="text-align: justify;">
+                                                <p>Responsibilities:</p>
+                                                <ul>
+                                                    <li>Learnt Emerging technologies NodeJS, ExpressJS, PUG and VUE JS.</li>
+                                                    <li>Involved in the development of a Single Page Web Application using MEVN Stack. </li>
+                                                    <li>Implemented a REST API service of displaying a JSON data comparing it with that in database in the form of tables. </li>
+                                                    <li>Coded each portion of the functionality as separate Vue Component with appropriate  modularization.</li>
+                                                    <li>Implemented verification of a file transfer on a verification environment before the file was actually transferred to a production environment.</li>
+                                                    <li>Fixed Bugs with Vue and Pug on the already developed functionalities of the application such as Front end validations on incorrect data before being saved to database.</li>
+                                                    <li>Handled a team of six with technical guidance on the allocated tasks form onsite.</li>
+                                                    <li>Imparted knowledge transition to new joinees on the application technology basics with appropriate handson.</li>  
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--                        speech-->
+                        <li>
+
+                            <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Technology Analyst - IVR Application Developer </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <br>Client : AT&T
+                                    <br>Project : <a data-toggle="popover" title="Speech Authentication and Backup POC " data-content="AT&T has a set of IVR applications developed on a common framework called IPPlatform to serve each of its products. Speech Authentication is a  very important API which is used by all the product IVR applications to provide speech enabled authentication to user based on his product. Backup POC is another API which is used by other applications to understand the purpose of call of the caller when the POC application fails with minimal menu items.">Speech Authentication and Backup POC </a>                                                              
+                                    <br>Technology & Environment : MEVN Stack, Windows.
+                                    <br>Domain: Contact Center<br>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button>
+                                </div>
+                                <div class="modal fade" id="2017" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Technology Analyst - Web Developer</h4>
+                                            </div>
+                                            <div class="modal-body" style="text-align: justify;">
+                                                <p>Responsibilities:</p>
+                                                <ul>
+                                                    <li>Write UI Spec based on requirement Visio diagrams provided by client.</li>
+                                                    <li>Develop call flows using Camunda.</li>
+                                                    <li>Handle Conditions in call flows using Drools. </li>
+                                                    <li>Write back end code as per IPPlatform Framework rules.</li>
+                                                    <li>Use Postman to test the developed API for proper call flow and prompt verification </li>
+                                                    <li>In parallel, Worked on a POC using draw.io tool to draw call flows. XML is fed to VTK and testcases are generated. This is fed to Cyara for automated IVR testing.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Technology Analyst - Web Developer</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <br>Client : AT&T
+                                        <br>Project : <a data-toggle="popover" title="AOtX involves capturing data from CAD systems and sending them to Provisioning Systems. Tickets and Enhancements arising in AOtX were handled with easy by Infosys team. The application is deployed on UNIX and Linux servers in various regions of the United States. The application is hosted on iPlanet and Tomcat Servers in different regions. Oracle database is used.">AOTX </a>                                                               
+                                        <br>Technology & Environment : Java, Tomcat, iPlanet, UNIX, Linux, Oracle.
+                                        <br>Domain: Telecom<br>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button>
+                                </div>
+                                <div class="modal fade" id="2017" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Technology Analyst - Web Developer</h4>
+                                            </div>
+                                            <div class="modal-body" style="text-align: justify;">
+                                                <p>Responsibilities:</p>
+                                                <ul>
+                                                    <li>Translated business requirement into HLD and DD documents.</li>
+                                                    <li>Worked on multiple application enhancement projects with responsibilities of Requirement Gathering, Design and Development. </li>
+                                                    <li>Involved in the complete SDLC software development life cycle of the application from development to testing </li>
+                                                    <li>Implemented backend business logic with HTML, JSP, Servlets, Java, JDBC.</li>
+                                                    <li>Used waterfall software development model.</li>
+                                                    <li>Active involvement in support activities of client developed application and
+                                                        daemons.</li>
+                                                    <li>Enhancements involving coding with JSP, Servlets.</li>
+                                                    <li>Trained on RESTFUL WEB SERVICES by Infosys Education Department.</li>
+                                                    <li>Expertise in configuration and installation of web certificates and web application.</li>
+                                                    <li>Provided KT’s for new joiners.</li>
+                                                    <li>Managing a team of four members.</li>
+                                                    <li>Handled Task allocation and Estimation for projects.</li>  
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Senior Systems Engineer - Web Enhancement Engineer </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <br>Client : AT&T
+                                        <br>Project : <a data-toggle="popover" title="AOtX involves capturing data from CAD systems and sending them to Provisioning Systems. Tickets and Enhancements arising in AOtX were handled with easy by Infosys team. The application is deployed on UNIX and Linux servers in various regions of the United States. The application is hosted on iPlanet and Tomcat Servers in different regions. Oracle database is used.">AOTX </a>                                                               
+                                        <br>Technology & Environment : Java, Tomcat, iPlanet, UNIX, Linux, Oracle.
+                                        <br>Domain: Telecom<br>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button>
+                                </div>
+                                <div class="modal fade" id="2017" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Technology Analyst - Web Developer</h4>
+                                            </div>
+                                            <div class="modal-body" style="text-align: justify;">
+                                                <p>Responsibilities:</p>
+                                                <ul>
+                                                    <li>•	Reverse Engineering of AOtX done and made a clear System Appreciation on the basics of AOtX with telecom technical details. Well Appreciated by client for the clarity of the document.</li>
+                                                    <li>Implemented GUI with HTML,Java Script,JSP,Servlet. </li>
+                                                    <li>Developed database scripts for bulk domain related changes. </li>
+                                                    <li>Implemented backend business logic with HTML, JSP, Servlets, Java, JDBC.</li>
+                                                    <li>Enhancements involving coding with JSP, Servlets.</li>
+                                                    <li>Hands on experience in solving issues arising out of Shell scripts.</li>
+                                                    <li>Hands on experience in migration of a web application and Database.</li>  
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Systems Engineer</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <br>Client : Verizon
+                                        <br>Project : <a data-toggle="popover" title="CMIS deals with the enhancements and tickets arising out of the trouble ticketing system of Verizon. It involves the use of SQL and Oracle clients with core java on the front end. It also involved the extensive use of JSPs and Servlets.">CMIS </a>                                                               
+                                        <br>Technology & Environment : Java, JSP, Servlets, Weblogic, UNIX, Linux, Oracle
+                                        <br>Domain: Telecom<br>
+                                    <p> </p>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button>
+                                </div>
+                                <div class="modal fade" id="2017" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Technology Analyst - Web Developer</h4>
+                                            </div>
+                                            <div class="modal-body" style="text-align: justify;">
+                                                <p>Responsibilities:</p>
+                                                <ul>
+                                                    <li>Implemented business logic with Core Java, JDBC.</li>
+                                                    <li>Used Oracle 11G as the backend database. Involved in design of the database schema and development of Stored Procedures. </li>
+                                                    <li>Level 2 Ticket resolutions with 100% SLA adherence and 0% quality breach. </li>
+                                                    <li>Enhancements involving coding with JSP, Servlets.</li>
+                                                    <li>Handling periodic processes – Daily file load processes, weekly and monthly processes.</li>
+                                                    <li>Developed stored procedures to enhance system functionality.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Systems Engineer Trainee </h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Trained in .Net by Infosys Technologies Ltd. </p>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#2017">Responsibilities</button>
+                                </div>
+                                <div class="modal fade" id="2017" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title">Technology Analyst - Web Developer</h4>
+                                            </div>
+                                            <div class="modal-body" style="text-align: justify;">
+                                                <p>Responsibilities:</p>
+                                                <ul>
+                                                    <li>Trained in Dotnet.</li>
+                                                    <li>Internal Assessments by Infosys ETA Department. </li>
+                                                    <li>Assignments on Dotnet Training. </li>
+                                                    <li>Employee Dashboard Development using ASP.Net as Final Project.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!--//work-experience-->
+
+        <!-- portfolio -->
+
+
+        <!-- /header -->
+        <div class="footer" id="contact">
+            <div class="container">
+                <div class="service-head one text-center">
+                    <h4>CONTACT ME</h4>
+                    <h3>GET <span>IN TOUCH WITH ME</span></h3>
+                    <span class="border two"></span>
+                </div>
+                <div class="mail_us">
+                    <div class="col-md-6 mail_left">
+                        <div class="contact-grid1-left">
+                            <div class="contact-grid1-left1">
+                                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                <h4>Contact By Email</h4>
+                                <ul>
+                                    <li>Mail1: <a href="mailto:sofiasamuels@gmail.com">sofiasamuels@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact-grid1-left">
+                            <div class="contact-grid1-left1">
+                                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                                <h4>Contact By Phone</h4>
+                                <ul>
+                                    <li>Phone: +91 9790820609</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact-grid1-left">
+                            <div class="contact-grid1-left1">
+                                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                                <h4>Looking For Address</h4>
+                                <ul>
+                                    <li>Chennai, TamilNadu.</li>
+                                    <li>India.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="col-md-6 mail_right">
+                        <form action="mailto:sofiasamuels@gmail.com" method="post">
+                            <input type="text" name="Name" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                            <input type="email" name="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                            <input type="text" name="Mobile number" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
+                            <textarea name="Message..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+                            <input type="submit" value="Send">
+
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="copy_right text-center">
+                    <ul class="social-icons two">
+                        <li><a href="#"> </a></li>
+                        <li><a href="http://www.facebook.com/sofiajensendinesh" class="fb"> </a></li>
+                        <li><a href="http://www.plus.google.com/sofiasamuels" class="in"> </a></li>
+                        <li><a href="#" class="dott"> </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //footer -->
+        <!-- /container -->
+
+        <a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <!--start-smooth-scrolling-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                $('[data-toggle="popover"]').popover(); 
+
+                $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+        </script>
+        <!--end-smooth-scrolling-->
+        <!-- //for bootstrap working -->
+
+    </body>
+</html>
+
